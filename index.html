@@ -28,8 +28,11 @@
 
     header h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 5em;
+      font-size: 3.5em;
       margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     nav {
@@ -37,6 +40,7 @@
       justify-content: center;
       background-color: var(--rose);
       padding: 10px;
+      flex-wrap: wrap;
     }
 
     nav button {
@@ -44,7 +48,7 @@
       border: none;
       color: var(--rose);
       font-size: 1em;
-      margin: 0 10px;
+      margin: 5px;
       padding: 8px 15px;
       border-radius: 20px;
       cursor: pointer;
@@ -91,20 +95,23 @@
     }
 
     .products {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
       justify-content: center;
+      padding: 10px;
     }
 
     .product-card {
       border: 2px solid var(--rose);
       border-radius: 15px;
-      margin: 10px;
-      width: 230px;
       text-align: center;
       padding: 10px;
       background-color: var(--white);
       box-shadow: 0 2px 8px rgba(216, 167, 177, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .product-card img {
@@ -114,7 +121,9 @@
     }
 
     .product-card h3 {
-      margin: 10px 0 5px;
+      margin: 5px 0;
+      font-size: 1em;
+      height: auto;
     }
 
     .product-card p {
@@ -124,36 +133,29 @@
     .sizes, .colors {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       margin: 5px 0;
     }
 
     .size, .color {
       display: inline-block;
-      cursor: pointer;
-    }
-
-    .size {
       border: 1px solid var(--rose);
       border-radius: 50%;
       padding: 5px 10px;
-      margin: 0 3px;
+      margin: 3px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
 
     .color {
       width: 20px;
       height: 20px;
-      border: 1px solid var(--rose);
-      border-radius: 50%;
-      margin: 0 3px;
+      padding: 0;
     }
 
-    .selected-size {
+    .selected {
       background-color: var(--rose);
-      color: white;
-    }
-
-    .selected-color {
-      outline: 2px solid var(--rose);
+      color: var(--white);
     }
 
     .product-card button {
@@ -163,6 +165,7 @@
       padding: 8px 12px;
       border-radius: 20px;
       cursor: pointer;
+      margin-top: 5px;
       transition: background 0.3s;
     }
 
@@ -297,14 +300,8 @@
     }
 
     @media (max-width: 600px) {
-      .products {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #cart-modal {
-        width: 90%;
-        right: 5%;
+      header h1 {
+        font-size: 2.5em;
       }
     }
   </style>
