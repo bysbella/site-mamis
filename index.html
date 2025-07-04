@@ -27,13 +27,13 @@
     }
 
     header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5em;
-      margin: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  font-family: 'Great Vibes', cursive;
+  font-size: 4em; /* maior, mas ainda cabe numa linha só */
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
     nav {
       display: flex;
@@ -174,18 +174,19 @@
     }
 
     #cart-icon {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: var(--rose);
-      color: var(--white);
-      padding: 12px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.2em;
-      z-index: 999;
-      box-shadow: 0 2px 8px rgba(216, 167, 177, 0.5);
-    }
+  position: fixed;
+  top: 20px; 
+  right: 15px;
+  background-color: var(--rose);
+  color: var(--white);
+  padding: 8px; /* menor */
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em; /* menor */
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(216, 167, 177, 0.5);
+}
+
 
     #cart-icon span {
       background-color: var(--white);
